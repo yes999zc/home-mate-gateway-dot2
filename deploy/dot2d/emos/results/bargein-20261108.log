@@ -1,0 +1,11 @@
+# bargein start 15:55:58 rounds=4
+volume set to 100/127
+round 1: music on (play_id=P1a1ba28307c-000d6-a3d28838), speaking wake word
+round 1: WAKE (barge-in) wakes 58->59 outputs_now=0
+round 2: music on (play_id=P1a1ba292cf4-000db-a3d28838), speaking wake word
+round 2: WAKE (barge-in) wakes 59->60 outputs_now=0
+round 3: music on (play_id=P1a1ba2a2944-000e0-a3d28838), speaking wake word
+round 3: WAKE (barge-in) wakes 60->61 outputs_now=0
+round 4: music on (play_id=P1a1ba2b25ad-000e5-a3d28838), speaking wake word
+round 4: WAKE (barge-in) wakes 61->62 outputs_now=0
+RESULT 4/4

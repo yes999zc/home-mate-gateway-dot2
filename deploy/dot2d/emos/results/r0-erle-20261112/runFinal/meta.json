@@ -1,0 +1,21 @@
+{
+ "played_at": "2026-11-12 01:52:02",
+ "wall_play_start": 1794419474.614573,
+ "play": {
+  "asset": "erle-stimulus.wav",
+  "channel": "voice",
+  "device": "dot2-d",
+  "duration_ms": 28018,
+  "ok": true,
+  "play_id": "P1a1cbbc8881-00020-7dcb760a",
+  "stage": "device_confirmed",
+  "total_ms": 28432
+ },
+ "lock_lines_after": [
+  "grep 'dealias locked' /run",
+  "rep 'dealias locked' /run                                                     <\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b/hm-direct.log | tail -2",
+  "[aec] dealias locked=true ever=true relocks=0 losses=0 backoffs=0",
+  "[aec] dealias locked=true ever=true relocks=0 losses=0 backoffs=0"
+ ],
+ "firmware_pid": "7460"
+}

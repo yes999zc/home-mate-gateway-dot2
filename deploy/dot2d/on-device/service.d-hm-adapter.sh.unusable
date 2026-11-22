@@ -1,0 +1,36 @@
+#!/system/bin/sh
+echo "retired: hm-adapter service.d launcher is not the shipping firmware" >&2
+exit 1
+# Home Mate on-device adapter (G5-1, 2026-11-08). Magisk runs service.d
+# scripts at boot in a persistent context. Supervised retry + log cap.
+# Rollback: remove this file, restore controller.json.before-hm-loopback,
+# reboot (or kill the EchoMuse server to force a redial).
+DIR=/data/local/tmp/hm-adapter
+LOG=$DIR/adapter.log
+MAX_LOG=1048576
+KEEP_LOG=131072
+
+echo hm-adapter > /sys/power/wake_lock 2>/dev/null
+
+(
+  i=0
+  while [ $i -lt 5 ]; do
+    SIZE=$(wc -c < "$LOG" 2>/dev/null)
+    if [ -n "$SIZE" ] && [ "$SIZE" -gt "$MAX_LOG" ]; then
+      tail -c "$KEEP_LOG" "$LOG" > "${LOG}.1" 2>/dev/null
+      : > "$LOG"
+    fi
+    START=$(date +%s)
+    sh $DIR/run.sh
+    END=$(date +%s)
+    RAN=$(( END - START ))
+    if [ $RAN -ge 30 ]; then
+      i=0
+    else
+      i=$(( i + 1 ))
+      echo "[$(date '+%m-%d %H:%M:%S')] fast exit ${i}/5 (ran ${RAN}s), retry" >> "$LOG"
+    fi
+    sleep 3
+  done
+  echo "[$(date '+%m-%d %H:%M:%S')] 5 fast exits — giving up" >> "$LOG"
+) &

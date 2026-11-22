@@ -1,0 +1,4 @@
+4fa975187891337320abf62c37be3e4092b5c03f12791211e010471962138a0c  deploy/dot2d/emos/emos-v0.10-hm.1-nocache-p16m.img
+2dc1e8e27e4622a10ee8e3e0d5bf7f22b539fe37113afdc2b7b03d699411020b  deploy/dot2d/emos/init-aarch64-static
+6ace3f1fa552cd51e230d3c54c18777055fc1a9042e53036d0227559c4dac7c8  deploy/dot2d/emos/tools/erle-stimulus.wav
+da37fac05e1c0e5cc0fd5c05444a73a96d28b33c0a73c5ff89cad1e2540651e9  deploy/dot2d/emos/tools/bargein-track.wav
