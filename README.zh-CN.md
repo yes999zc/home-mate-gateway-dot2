@@ -80,7 +80,7 @@ cargo zigbuild --release --target aarch64-unknown-linux-gnu.2.19 -p gateway
 # 在 home-mate 主仓使用 hm-provision.sh 一键完成新节点引导、验签激活与全屋配置克隆：
 ./tools/hm-provision.sh --device-id dot2-living \
   --seed build/bootstrap/home-mate-bootstrap-dot2-living.tar.gz \
-  --release build/release/home-mate-release-2026.11.22-98.tar \
+  --release build/release/home-mate-release-2026.11.23-106.tar \
   --serial /dev/cu.usbmodem8401 --ip 192.168.1.73 \
   --reference-node lx06 --reference-ip 192.168.1.50 --wake-word 你好小智
 ```
